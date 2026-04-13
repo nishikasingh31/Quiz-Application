@@ -19,9 +19,9 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 ⚡ Responsive UI
 
 ## 🛠️ Tech Stack
-Frontend-> React.js, CSS 
-Backend -> Node.js, Express.js
-Database -> MongoDB
+- Frontend-> React.js, CSS
+- Backend -> Node.js, Express.js
+- Database -> MongoDB
 
 ## 🌐 API Endpoints
 📌 Quiz Management

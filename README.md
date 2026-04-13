@@ -11,12 +11,12 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 ## 🚀 Features
 
 🎯 Multiple quiz categories<br>
-❓ Dynamic questions rendering< br / >
-✅ Multiple choice questions< br / >
-📊 Score calculation and result display< br / >
-🔄 Navigate between questions< br / >
-🌐 Full-stack integration (Frontend + Backend)< br / >
-⚡ Responsive UI< br / >
+❓ Dynamic questions rendering<br/>
+✅ Multiple choice questions<br/>
+📊 Score calculation and result display<br/>
+🔄 Navigate between questions<br/>
+🌐 Full-stack integration (Frontend + Backend)<br/>
+⚡ Responsive UI<br/>
 
 ## 🛠️ Tech Stack
 - Frontend-> React.js, CSS
@@ -79,17 +79,16 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 git clone https://github.com/nishikasingh31/Quiz-Application.git
 cd Quiz-Application
 ```
-
 2. Install Backend Dependencies
 ```bash
 cd backend
 npm install
 ```
-Create a .env file and add:
-```bash
-MONGO_URI=your_mongodb_connection_string
-PORT=5000
-```
+  Create a .env file and add:
+  ```bash
+  MONGO_URI=your_mongodb_connection_string
+  PORT=5000
+  ```
 Run backend:
 ```bash
 npm start

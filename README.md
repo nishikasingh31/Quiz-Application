@@ -23,6 +23,56 @@ Frontend-> React.js, CSS
 Backend -> Node.js, Express.js
 Database -> MongoDB
 
+# 🌐 API Endpoints
+📌 Quiz Management
+| Method	| Endpoint  |	Description |
+|---------|-----------|-------------|
+| POST	| /api/quizzes |	Create a new quiz |
+| GET |	/api/quizzes	| Get all quizzes |
+
+❓ Question Management
+| Method	| Endpoint  |	Description |
+|---------|-----------|-------------|
+| POST	| /api/quizzes/:quizId/questions	| Add a question to a quiz |
+| GET	| /api/quizzes/:quizId/questions	| Get all questions of a quiz |
+
+📝 Quiz Submission
+| Method	| Endpoint  |	Description |
+|---------|-----------|-------------|
+| POST	| /api/quizzes/:quizId/submit	| Submit answers and calculate score |
+
+# ⚙️ Controller Logic (Overview)
+createQuiz → Creates a new quiz and stores it in the database.
+addQuestion → Adds a question to a specific quiz using quizId.
+getQuizzes → Fetches all available quizzes.
+getQuizQuestions → Retrieves all questions for a selected quiz.
+submitAnswers → Compares user answers with correct ones and calculates the final score.
+
+# 🔄 Flow
+User selects a quiz
+Questions are fetched from backend
+User submits answers
+Backend evaluates and returns score
+
+# 🔄 Flow of Data
+
+1. Frontend (React)
+Handles user interface and interactions
+Sends API requests (fetch/axios) to the backend
+
+2. Backend (Node.js + Express)
+Receives client requests via REST APIs
+Processes logic using controllers
+Interacts with the database
+
+3. Database (MongoDB)
+Stores quizzes, questions, and answers
+Returns data to the backend when requested
+
+4. Response Flow
+Backend sends processed data (questions/score)
+Frontend displays results to the user
+
 # 🧪 Getting Started
 1. Clone the Repository
 ```bash
@@ -59,18 +109,3 @@ Frontend (Netlify)
 -> Build command: npm run build
 -> Publish directory: build
 
-# 🌐 API Endpoints
-📌 Quiz Management
-| Method	| Endpoint  |	Description |
-|------------------|------------------|----------------|
-POST	/api/quizzes	Create a new quiz
-GET	/api/quizzes	Get all quizzes
-
-❓ Question Management
-| Method	| Endpoint  |	Description |
-POST	/api/quizzes/:quizId/questions	Add a question to a quiz
-GET	/api/quizzes/:quizId/questions	Get all questions of a quiz
-
-📝 Quiz Submission
-| Method	| Endpoint  |	Description |
-POST	/api/quizzes/:quizId/submit	Submit answers and calculate score

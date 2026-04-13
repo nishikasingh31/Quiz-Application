@@ -16,9 +16,9 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 ⚡ Responsive UI<br/>
 
 ## 🛠️ Tech Stack
-- Frontend-> React.js, CSS
-- Backend -> Node.js, Express.js
-- Database -> MongoDB
+- Frontend → React.js, CSS
+- Backend → Node.js, Express.js
+- Database → MongoDB
 
 ## 🌐 API Endpoints
 📌 Quiz Management
@@ -53,20 +53,20 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 
 ## 🔄 Flow of Data
 
-1. Frontend (React)
+1. <u>Frontend (React)<u/>
 - Handles user interface and interactions
 - Sends API requests (fetch/axios) to the backend
 
-2. Backend (Node.js + Express)
+2. <u>Backend (Node.js + Express)<u/>
 - Receives client requests via REST APIs
 - Processes logic using controllers
 - Interacts with the database
 
-3. Database (MongoDB)
+3. <u>Database (MongoDB)<u/>
 - Stores quizzes, questions, and answers
 - Returns data to the backend when requested
 
-4. Response Flow
+4. <u>Response Flow<u/>
 - Backend sends processed data (questions/score)
 - Frontend displays results to the user
 
@@ -98,10 +98,10 @@ npm start
 ```
 ## 🚀 Deployment
 Backend (Render)
--> Create a Web Service on Render<br/>
--> Add environment variable MONGODB_URI<br/>
--> Deploy<br/>
+→ Create a Web Service on Render<br/>
+→ Add environment variable MONGODB_URI<br/>
+→ Deploy<br/>
 Frontend (Netlify)<br/>
--> Build command: npm run build<br/>
--> Publish directory: build<br/>
+→ Build command: npm run build<br/>
+→ Publish directory: build<br/>
 

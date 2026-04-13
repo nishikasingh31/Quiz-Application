@@ -10,13 +10,13 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 
 ## 🚀 Features
 
-🎯 Multiple quiz categories
-❓ Dynamic questions rendering
-✅ Multiple choice questions
-📊 Score calculation and result display
-🔄 Navigate between questions
-🌐 Full-stack integration (Frontend + Backend)
-⚡ Responsive UI
+🎯 Multiple quiz categories< br / >
+❓ Dynamic questions rendering< br / >
+✅ Multiple choice questions< br / >
+📊 Score calculation and result display< br / >
+🔄 Navigate between questions< br / >
+🌐 Full-stack integration (Frontend + Backend)< br / >
+⚡ Responsive UI< br / >
 
 ## 🛠️ Tech Stack
 - Frontend-> React.js, CSS

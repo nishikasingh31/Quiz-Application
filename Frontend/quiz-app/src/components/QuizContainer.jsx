@@ -39,7 +39,7 @@ const QuizContainer = ({ quizId, onBack }) => {
   if (questions.length === 0) return <h2>Loading Questions...</h2>;
 
   return (
-    <div className="quiz-container">
+    <div className="quiz-page">
       {/* 4. Optional: A button to go back to the list */}
       <button onClick={onBack} className="back-btn">⬅ Back to Quizzes</button>
       

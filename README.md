@@ -1,11 +1,8 @@
 # Quiz Application (MERN Stack)
 
 This project is a full-stack Quiz Application built using the MERN stack (MongoDB, Express, React, Node.js) that enables users to participate in interactive quizzes and receive instant performance feedback.
-
 The application is designed to simulate real-world online testing platforms, where quizzes can be dynamically created, questions can be added, and users can attempt them in a structured way. It focuses on providing a smooth user experience along with efficient backend processing for answer evaluation.
-
 Users can select a quiz, navigate through multiple questions, and submit their responses. The system then evaluates the answers and generates a score instantly, making it useful for learning, self-assessment, and practice.
-
 The backend exposes a set of RESTful APIs to handle quiz creation, question management, and answer submission, while the frontend provides an intuitive interface for interacting with the system.
 
 ## 🚀 Features
@@ -101,10 +98,10 @@ npm start
 ```
 ## 🚀 Deployment
 Backend (Render)
--> Create a Web Service on Render
--> Add environment variable MONGODB_URI
--> Deploy
-Frontend (Netlify)
--> Build command: npm run build
--> Publish directory: build
+-> Create a Web Service on Render<br/>
+-> Add environment variable MONGODB_URI<br/>
+-> Deploy<br/>
+Frontend (Netlify)<br/>
+-> Build command: npm run build<br/>
+-> Publish directory: build<br/>
 

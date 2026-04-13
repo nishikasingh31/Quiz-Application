@@ -1,4 +1,4 @@
-## Quiz Application (MERN Stack)
+# Quiz Application (MERN Stack)
 
 This project is a full-stack Quiz Application built using the MERN stack (MongoDB, Express, React, Node.js) that enables users to participate in interactive quizzes and receive instant performance feedback.
 
@@ -8,7 +8,7 @@ Users can select a quiz, navigate through multiple questions, and submit their r
 
 The backend exposes a set of RESTful APIs to handle quiz creation, question management, and answer submission, while the frontend provides an intuitive interface for interacting with the system.
 
-# 🚀 Features
+## 🚀 Features
 
 🎯 Multiple quiz categories
 ❓ Dynamic questions rendering
@@ -18,12 +18,12 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 🌐 Full-stack integration (Frontend + Backend)
 ⚡ Responsive UI
 
-# 🛠️ Tech Stack
+## 🛠️ Tech Stack
 Frontend-> React.js, CSS 
 Backend -> Node.js, Express.js
 Database -> MongoDB
 
-# 🌐 API Endpoints
+## 🌐 API Endpoints
 📌 Quiz Management
 | Method	| Endpoint  |	Description |
 |---------|-----------|-------------|
@@ -41,20 +41,20 @@ Database -> MongoDB
 |---------|-----------|-------------|
 | POST	| /api/quizzes/:quizId/submit	| Submit answers and calculate score |
 
-# ⚙️ Controller Logic (Overview)
+## ⚙️ Controller Logic (Overview)
 createQuiz → Creates a new quiz and stores it in the database.
 addQuestion → Adds a question to a specific quiz using quizId.
 getQuizzes → Fetches all available quizzes.
 getQuizQuestions → Retrieves all questions for a selected quiz.
 submitAnswers → Compares user answers with correct ones and calculates the final score.
 
-# 🔄 Flow
+## 🔄 Flow
 User selects a quiz
 Questions are fetched from backend
 User submits answers
 Backend evaluates and returns score
 
-# 🔄 Flow of Data
+## 🔄 Flow of Data
 
 1. Frontend (React)
 Handles user interface and interactions
@@ -73,7 +73,7 @@ Returns data to the backend when requested
 Backend sends processed data (questions/score)
 Frontend displays results to the user
 
-# 🧪 Getting Started
+## 🧪 Getting Started
 1. Clone the Repository
 ```bash
 git clone https://github.com/nishikasingh31/Quiz-Application.git
@@ -100,7 +100,7 @@ cd frontend
 npm install
 npm start
 ```
-# 🚀 Deployment
+## 🚀 Deployment
 Backend (Render)
 -> Create a Web Service on Render
 -> Add environment variable MONGODB_URI

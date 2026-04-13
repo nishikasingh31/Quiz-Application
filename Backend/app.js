@@ -9,7 +9,7 @@ app.use(express.json()); // Parses incoming JSON requests
 app.use(express.urlencoded({ extended: true })); // Parses URL-encoded data
 
 app.use(cors({
-  origin: "https://nishika-singh-quiz-application.netlify.app/"
+  origin: "https://nishika-singh-quiz-application.netlify.app"
 }));
 
 // Routes

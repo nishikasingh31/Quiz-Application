@@ -50,7 +50,7 @@ cd frontend
 npm install
 npm start
 ```
-#🚀 Deployment
+# 🚀 Deployment
 Backend (Render)
 -> Create a Web Service on Render
 -> Add environment variable MONGODB_URI
@@ -58,3 +58,19 @@ Backend (Render)
 Frontend (Netlify)
 -> Build command: npm run build
 -> Publish directory: build
+
+# 🌐 API Endpoints
+📌 Quiz Management
+| Method	| Endpoint  |	Description |
+|------------------|------------------|----------------|
+POST	/api/quizzes	Create a new quiz
+GET	/api/quizzes	Get all quizzes
+
+❓ Question Management
+| Method	| Endpoint  |	Description |
+POST	/api/quizzes/:quizId/questions	Add a question to a quiz
+GET	/api/quizzes/:quizId/questions	Get all questions of a quiz
+
+📝 Quiz Submission
+| Method	| Endpoint  |	Description |
+POST	/api/quizzes/:quizId/submit	Submit answers and calculate score

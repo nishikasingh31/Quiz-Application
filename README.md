@@ -53,20 +53,20 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 
 ## 🔄 Flow of Data
 
-1. <u>Frontend (React)<u/>
+1. <u>Frontend (React)</u>
 - Handles user interface and interactions
 - Sends API requests (fetch/axios) to the backend
 
-2. <u>Backend (Node.js + Express)<u/>
+2. <u>Backend (Node.js + Express)</u>
 - Receives client requests via REST APIs
 - Processes logic using controllers
 - Interacts with the database
 
-3. <u>Database (MongoDB)<u/>
+3. <u>Database (MongoDB)</u>
 - Stores quizzes, questions, and answers
 - Returns data to the backend when requested
 
-4. <u>Response Flow<u/>
+4. <u>Response Flow</u>
 - Backend sends processed data (questions/score)
 - Frontend displays results to the user
 

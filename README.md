@@ -42,11 +42,11 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 | POST	| /api/quizzes/:quizId/submit	| Submit answers and calculate score |
 
 ## ⚙️ Controller Logic (Overview)
-createQuiz → Creates a new quiz and stores it in the database.
-addQuestion → Adds a question to a specific quiz using quizId.
-getQuizzes → Fetches all available quizzes.
-getQuizQuestions → Retrieves all questions for a selected quiz.
-submitAnswers → Compares user answers with correct ones and calculates the final score.
+- createQuiz → Creates a new quiz and stores it in the database.
+- addQuestion → Adds a question to a specific quiz using quizId.
+- getQuizzes → Fetches all available quizzes.
+- getQuizQuestions → Retrieves all questions for a selected quiz.
+- submitAnswers → Compares user answers with correct ones and calculates the final score.
 
 ## 🔄 Flow
 User selects a quiz

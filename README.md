@@ -49,29 +49,29 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 - submitAnswers → Compares user answers with correct ones and calculates the final score.
 
 ## 🔄 Flow
-User selects a quiz
-Questions are fetched from backend
-User submits answers
-Backend evaluates and returns score
+- User selects a quiz
+- Questions are fetched from backend
+- User submits answers
+- Backend evaluates and returns score
 
 ## 🔄 Flow of Data
 
 1. Frontend (React)
-Handles user interface and interactions
-Sends API requests (fetch/axios) to the backend
+- Handles user interface and interactions
+- Sends API requests (fetch/axios) to the backend
 
 2. Backend (Node.js + Express)
-Receives client requests via REST APIs
-Processes logic using controllers
-Interacts with the database
+- Receives client requests via REST APIs
+- Processes logic using controllers
+- Interacts with the database
 
 3. Database (MongoDB)
-Stores quizzes, questions, and answers
-Returns data to the backend when requested
+- Stores quizzes, questions, and answers
+- Returns data to the backend when requested
 
 4. Response Flow
-Backend sends processed data (questions/score)
-Frontend displays results to the user
+- Backend sends processed data (questions/score)
+- Frontend displays results to the user
 
 ## 🧪 Getting Started
 1. Clone the Repository

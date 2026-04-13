@@ -1,0 +1,192 @@
+{
+  "info": {
+    "_postman_id": "edc92f60-b245-4f2a-929d-56e29fede9c2",
+    "name": "Online Quiz API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "37265597"
+  },
+  "item": [
+    {
+      "name": "Create Quiz",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"title\": \"JavaScript\"\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/quizzes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "quizzes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Add Questions",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n   \"text\": \"What is 'React Router' used for?\",\r\n    \"type\": \"single_choice\",\r\n    \"options\": [\r\n      { \"text\": \"To connect React to a Node.js server\", \"isCorrect\": false },\r\n      { \"text\": \"To handle navigation and URL changes in a Single Page Application\", \"isCorrect\": true },\r\n      { \"text\": \"To optimize image rendering\", \"isCorrect\": false },\r\n      { \"text\": \"To manage Redux store\", \"isCorrect\": false }\r\n    ]\r\n  }",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/quizzes/69dbc1139a469a0e41c02e88/questions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "quizzes",
+            "69dbc1139a469a0e41c02e88",
+            "questions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Quiz",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/quizzes",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "quizzes"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Questions",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var template = `\r",
+              "<style type=\"text/css\">\r",
+              "    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+              "    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+              "    .tftable tr {background-color:#ffffff;}\r",
+              "    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+              "    .tftable tr:hover {background-color:#e0ffff;}\r",
+              "</style>\r",
+              "\r",
+              "<table class=\"tftable\" border=\"1\">\r",
+              "    <tr>\r",
+              "        <th>ID</th>\r",
+              "        <th>Text</th>\r",
+              "        <th>Type</th>\r",
+              "        <th>Options</th>\r",
+              "    </tr>\r",
+              "    \r",
+              "    {{#each response}}\r",
+              "        <tr id=row_{{@key}}>\r",
+              "            <td>{{id}}</td>\r",
+              "            <td>{{text}}</td>\r",
+              "            <td>{{type}}</td>\r",
+              "            <td>\r",
+              "                {{#each options}}\r",
+              "                    {{text}} {{#unless @last}}, {{/unless}}\r",
+              "                {{/each}}\r",
+              "            </td>\r",
+              "        </tr>\r",
+              "    {{/each}}\r",
+              "</table>\r",
+              "`;\r",
+              "\r",
+              "function constructVisualizerPayload() {\r",
+              "    return {response: pm.response.json()};\r",
+              "}\r",
+              "\r",
+              "pm.visualizer.set(template, constructVisualizerPayload());"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/quizzes/69dba3335c722bd0a6072561/questions",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "quizzes",
+            "69dba3335c722bd0a6072561",
+            "questions"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Submit Answer",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"answers\": [\r\n    //capital of france\r\n    { \"questionId\": \"68da73671393a9a8fb147da8\", \"selectedOptionId\": \"68da73671393a9a8fb147da9\" },\r\n    //prime number\r\n    { \"questionId\": \"68da75ff1393a9a8fb147db6\", \"selectedOptionIds\": [ \"68da75ff1393a9a8fb147db7\", \"68da75ff1393a9a8fb147db8\" ]},\r\n    //node.js is used\r\n    { \"questionId\": \"68dc22783270a0e4ea4b57ad\", \"textAnswer\": \"It is a Runtime Environment used to execute JavaScript code outside of a web browser, enabling server-side development with JavaScript. \" }\r\n    //\r\n  ]\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/quizzes/68da727d1393a9a8fb147da6/submit",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "quizzes",
+            "68da727d1393a9a8fb147da6",
+            "submit"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

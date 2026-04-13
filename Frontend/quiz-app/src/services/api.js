@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://online-quiz-application-yffb.onrender.com/api';
+const API_BASE_URL = 'https://quiz-application-arye.onrender.com/api';
 
 // Fetch all available quizzes for the Menu
 export const getAllQuizzes = async () => {

@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 
 app.use(cors({
-  origin: "https://nishika-singh-online-quiz-app.vercel.app/"
+  origin: "https://nishika-singh-online-quiz-app.vercel.app"
 })); // Allows your React frontend to connect
 app.use(express.json()); // Parses incoming JSON requests
 app.use(express.urlencoded({ extended: true })); // Parses URL-encoded data

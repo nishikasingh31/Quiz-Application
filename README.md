@@ -53,30 +53,30 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 
 ## 🔄 Flow of Data
 
-1. <u>Frontend (React)</u>
+**1. Frontend (React)**
 - Handles user interface and interactions
 - Sends API requests (fetch/axios) to the backend
 
-2. <u>Backend (Node.js + Express)</u>
+**2. Backend (Node.js + Express)**
 - Receives client requests via REST APIs
 - Processes logic using controllers
 - Interacts with the database
 
-3. <u>Database (MongoDB)</u>
+**3. Database (MongoDB)**
 - Stores quizzes, questions, and answers
 - Returns data to the backend when requested
 
-4. <u>Response Flow</u>
+**4. Response Flow**
 - Backend sends processed data (questions/score)
 - Frontend displays results to the user
 
 ## 🧪 Getting Started
-1. Clone the Repository
+**1. Clone the Repository**
 ```bash
 git clone https://github.com/nishikasingh31/Quiz-Application.git
 cd Quiz-Application
 ```
-2. Install Backend Dependencies
+**2. Install Backend Dependencies**
 ```bash
 cd backend
 npm install
@@ -90,18 +90,21 @@ Run backend:
 ```bash
 npm start
 ```
-3. Install Frontend Dependencies
+**3. Install Frontend Dependencies**
 ```bash
 cd frontend
 npm install
 npm start
 ```
 ## 🚀 Deployment
-Backend (Render)
+**Backend (Render)**
+
 → Create a Web Service on Render<br/>
 → Add environment variable MONGODB_URI<br/>
 → Deploy<br/>
-Frontend (Netlify)<br/>
+
+**Frontend (Netlify)<br/>**
+
 → Build command: npm run build<br/>
 → Publish directory: build<br/>
 

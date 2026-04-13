@@ -10,7 +10,7 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 
 ## 🚀 Features
 
-🎯 Multiple quiz categories< br>
+🎯 Multiple quiz categories<br>
 ❓ Dynamic questions rendering< br / >
 ✅ Multiple choice questions< br / >
 📊 Score calculation and result display< br / >

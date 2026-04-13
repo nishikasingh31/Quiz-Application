@@ -8,7 +8,7 @@ Users can select a quiz, navigate through multiple questions, and submit their r
 
 The backend exposes a set of RESTful APIs to handle quiz creation, question management, and answer submission, while the frontend provides an intuitive interface for interacting with the system.
 
-#🚀 Features
+# 🚀 Features
 
 🎯 Multiple quiz categories
 ❓ Dynamic questions rendering
@@ -18,12 +18,12 @@ The backend exposes a set of RESTful APIs to handle quiz creation, question mana
 🌐 Full-stack integration (Frontend + Backend)
 ⚡ Responsive UI
 
-#🛠️ Tech Stack
+# 🛠️ Tech Stack
 Frontend-> React.js, CSS 
 Backend -> Node.js, Express.js
 Database -> MongoDB
 
-#🧪 Getting Started
+# 🧪 Getting Started
 1. Clone the Repository
 ```bash
 git clone https://github.com/nishikasingh31/Quiz-Application.git

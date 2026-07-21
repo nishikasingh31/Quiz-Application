@@ -4,8 +4,7 @@ This project is a full-stack Quiz Application built using the MERN stack (MongoD
 The application is designed to simulate real-world online testing platforms, where quizzes can be dynamically created, questions can be added, and users can attempt them in a structured way. It focuses on providing a smooth user experience along with efficient backend processing for answer evaluation.<br/>
 Users can select a quiz, navigate through multiple questions, and submit their responses. The system then evaluates the answers and generates a score instantly, making it useful for learning, self-assessment, and practice.<br/>
 The backend exposes a set of RESTful APIs to handle quiz creation, question management, and answer submission, while the frontend provides an intuitive interface for interacting with the system.
-<br/>
-Interview Prep AI is a full-stack web app that helps job seekers practice for interviews. Users pick a role, experience level, and question type, and the app streams AI-generated, realistic interview questions in real time. Users can type their own answers to get instant AI-scored feedback, or view a model answer on demand. All questions and answers are saved to a personal history for later review.
+
 
 ## 🚀 Features
 

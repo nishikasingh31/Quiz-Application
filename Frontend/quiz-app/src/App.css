@@ -1,22 +1,22 @@
 /* --- Color Variables --- */
 :root {
-  --color-bg: #000000;
-  --color-text: #f5f5f5;
-  --color-heading-gradient-start: #f5ff00;
-  --color-heading-gradient-end: #ff006e;
+  --color-bg: #14201c;
+  --color-text: #eaf5ee;
+  --color-heading-gradient-start: #6ee7b7;
+  --color-heading-gradient-end: #3b82f6;
 
-  --color-card-bg: #0f0f0f;
-  --color-card-border: #2a2a2a;
-  --color-card-border-hover: #f5ff00;
-  --color-card-shadow-hover: rgba(255, 0, 110, 0.3);
+  --color-card-bg: #1c2e28;
+  --color-card-border: #33493f;
+  --color-card-border-hover: #6ee7b7;
+  --color-card-shadow-hover: rgba(110, 231, 183, 0.2);
 
-  --color-btn-gradient-start: #ff006e;
-  --color-btn-gradient-end: #f5ff00;
-  --color-btn-text: #000000;
-  --color-btn-shadow: rgba(0, 0, 0, 0.5);
+  --color-btn-gradient-start: #059669;
+  --color-btn-gradient-end: #3b82f6;
+  --color-btn-text: #ffffff;
+  --color-btn-shadow: rgba(0, 0, 0, 0.4);
 
-  --color-back-btn-border: #f5ff00;
-  --color-back-btn-text: #f5ff00;
+  --color-back-btn-border: #6ee7b7;
+  --color-back-btn-text: #6ee7b7;
 }
 
 /* --- Global Styles --- */
@@ -30,12 +30,11 @@ body {
   padding: 20px;
   margin: 0;
   min-height: 100vh;
-   background-image: repeating-linear-gradient(
-    45deg,
-    var(--color-card-bg) 0px,
-    var(--color-card-bg) 2px,
-    transparent 2px,
-    transparent 20px
+  background-image:
+    radial-gradient(circle at 15% 20%, var(--color-heading-gradient-start) 0%, transparent 35%),
+    radial-gradient(circle at 85% 80%, var(--color-heading-gradient-end) 0%, transparent 35%);
+  background-attachment: fixed;
+  opacity: 1;
   );
 }
 h1 {

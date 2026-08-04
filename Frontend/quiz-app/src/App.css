@@ -1,8 +1,29 @@
+/* --- Color Variables --- */
+:root {
+  --color-bg: #0f0f0f;
+  --color-text: #ffffff;
+  --color-heading-gradient-start: #6a11cb;
+  --color-heading-gradient-end: #2575fc;
+
+  --color-card-bg: #1e1e26;
+  --color-card-border: #33333f;
+  --color-card-border-hover: #7c3aed;
+  --color-card-shadow-hover: rgba(124, 58, 237, 0.2);
+
+  --color-btn-gradient-start: #2563eb;
+  --color-btn-gradient-end: #7c3aed;
+  --color-btn-text: #ffffff;
+  --color-btn-shadow: rgba(0, 0, 0, 0.3);
+
+  --color-back-btn-border: #7c3aed;
+  --color-back-btn-text: #7c3aed;
+}
+
 /* --- Global Styles --- */
 body {
-  background-color: #0f0f0f; /* Matched to your screenshot */
+  background-color: var(--color-bg);
   font-family: 'Inter', -apple-system, sans-serif;
-  color: #ffffff;
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,7 +35,7 @@ h1 {
   font-size: 3rem;
   font-weight: 800;
   margin-bottom: 40px;
-  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  background: linear-gradient(to right, var(--color-heading-gradient-start) 0%, var(--color-heading-gradient-end) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -32,8 +53,8 @@ h1 {
   margin: 0 auto;
 }
 .quiz-card {
-  background: #1e1e26;
-  border: 1px solid #33333f;
+  background: var(--color-card-bg);
+  border: 1px solid var(--color-card-border);
   border-radius: 20px;
   padding: 30px;
   height: 130px;
@@ -56,8 +77,8 @@ h1 {
 }
 .quiz-card:hover {
   transform: translateY(-8px);
-  border-color: #7c3aed;
-  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.2);
+  border-color: var(--color-card-border-hover);
+  box-shadow: 0 15px 40px var(--color-card-shadow-hover);
 }
 /* --- Quiz Interface --- */
 .quiz-page {
@@ -71,7 +92,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  color: white;
+  color: var(--color-text);
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
@@ -111,14 +132,14 @@ button {
   max-width: 500px;
   font-size: 1.1rem;
   font-weight: 600;
-  color: #ffffff;
-  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+  color: var(--color-btn-text);
+  background: linear-gradient(90deg, var(--color-btn-gradient-start) 0%, var(--color-btn-gradient-end) 100%);
   border: none;
   border-radius: 12px;
   padding: 16px;
   margin: 8px 0;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 15px var(--color-btn-shadow);
 }
 button:hover {
   transform: translateY(-2px);
@@ -126,8 +147,8 @@ button:hover {
 /* Specific styling for the Back Button to override global button */
 .back-btn {
   background: transparent;
-  border: 1px solid #7c3aed;
-  color: #7c3aed;
+  border: 1px solid var(--color-back-btn-border);
+  color: var(--color-back-btn-text);
   display: block;       /* Ensures it behaves like a block for margins */
   margin-left: auto;    /* Pushes from left */
   margin-right: auto;
@@ -139,4 +160,4 @@ button:hover {
 }
 .scoreboard {
   text-align: center;
-} 
+}

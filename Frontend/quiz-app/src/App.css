@@ -1,13 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,300;0,600;0,800;1,300&display=swap');
+
 /* --- Global Styles --- */
 :root {
-  --bg-primary: #0a0a0f;
-  --bg-card: #16161f;
-  --border-subtle: #26262f;
-  --accent-blue: #2563eb;
-  --accent-purple: #7c3aed;
-  --accent-glow: rgba(124, 58, 237, 0.35);
-  --text-primary: #ffffff;
-  --text-muted: #9ca0ae;
+  --accent: #38bdf8;
+  --bg-dark-1: #0f172a;
+  --bg-dark-2: #020617;
+  --card-border: rgba(56, 189, 248, 0.4);
+  --text-muted: #cbd5f5;
 }
 
 * {
@@ -15,26 +14,74 @@
 }
 
 body {
-  background: radial-gradient(circle at 20% 0%, #1a1a2e 0%, #0a0a0f 55%);
-  font-family: 'Inter', -apple-system, sans-serif;
-  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--bg-dark-1), var(--bg-dark-2));
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 40px 20px;
+  padding: 20px;
   margin: 0;
   min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* --- Particle Background --- */
+#particle-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#particle-bg span {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.5;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-110vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
+/* Everything else sits above the particles */
+h1,
+.quiz-container,
+.quiz-page,
+.question-card,
+.scoreboard {
+  position: relative;
+  z-index: 1;
 }
 
 h1 {
   font-size: 3rem;
   font-weight: 800;
-  letter-spacing: -0.02em;
-  margin-bottom: 48px;
-  background: linear-gradient(100deg, #818cf8 0%, #a855f7 50%, #ec4899 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-style: normal;
+  margin-bottom: 40px;
+  color: var(--accent);
   text-align: center;
 }
 
@@ -42,7 +89,7 @@ h1 {
 .quiz-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  gap: 30px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
@@ -55,36 +102,24 @@ h1 {
 }
 
 .quiz-card {
-  position: relative;
-  background: linear-gradient(160deg, var(--bg-card) 0%, #1a1a24 100%);
-  border: 1px solid var(--border-subtle);
-  border-radius: 18px;
-  padding: 28px;
-  height: 140px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid var(--card-border);
+  border-radius: 15px;
+  padding: 30px;
+  height: 130px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
   cursor: pointer;
-  overflow: hidden;
-}
-
-.quiz-card::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--accent-glow), transparent 60%);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-  pointer-events: none;
 }
 
 .quiz-card h3 {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.3rem;
   font-weight: 600;
+  font-style: normal;
   line-height: 1.4;
-  letter-spacing: -0.01em;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -93,13 +128,9 @@ h1 {
 }
 
 .quiz-card:hover {
-  transform: translateY(-6px);
-  border-color: var(--accent-purple);
-  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.25);
-}
-
-.quiz-card:hover::before {
-  opacity: 1;
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
 }
 
 /* --- Quiz Interface --- */
@@ -117,18 +148,17 @@ h1 {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  background: rgba(22, 22, 31, 0.6);
-  border: 1px solid var(--border-subtle);
-  border-radius: 24px;
-  padding: 48px 32px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 18px;
+  padding: 40px 30px;
   min-height: 500px;
-  backdrop-filter: blur(12px);
 }
 
 .question-text {
   font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  font-style: normal;
   margin-bottom: 10px;
   height: 50px;
   display: flex;
@@ -139,10 +169,10 @@ h1 {
 .options {
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 15px;
   width: 100%;
   max-width: 500px;
-  margin-top: 24px;
+  margin-top: 20px;
 }
 
 .option-btn {
@@ -150,71 +180,53 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(90deg, #1e1e2a 0%, #23232f 100%);
-  border: 1px solid var(--border-subtle);
-  color: var(--text-primary);
-  font-weight: 600;
-  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
-}
-
-.option-btn:hover {
-  border-color: var(--accent-purple);
-  background: linear-gradient(90deg, #23233a 0%, #2a1f3d 100%);
-  transform: translateY(-2px);
 }
 
 .option-btn.correct {
-  border-color: #22c55e;
-  background: linear-gradient(90deg, #14301f 0%, #163823 100%);
+  background: #16a34a !important;
 }
 
 .option-btn.incorrect {
-  border-color: #ef4444;
-  background: linear-gradient(90deg, #331414 0%, #3a1616 100%);
+  background: #dc2626 !important;
 }
 
 /* Global Button - Used for Options */
 button {
   width: 100%;
   max-width: 500px;
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   font-weight: 600;
+  font-style: normal;
   color: #ffffff;
-  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
+  background: var(--accent);
   border: none;
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 16px;
   margin: 8px 0;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
-  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+  box-shadow: 0 4px 15px rgba(56, 189, 248, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 button:hover {
   transform: translateY(-2px);
-  filter: brightness(1.08);
-  box-shadow: 0 10px 28px rgba(124, 58, 237, 0.35);
-}
-
-button:active {
-  transform: translateY(0);
+  box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
 }
 
 /* Specific styling for the Back Button to override global button */
 .back-btn {
   background: transparent;
-  border: 1px solid var(--accent-purple);
-  color: var(--accent-purple);
+  border: 1px solid var(--accent);
+  color: var(--accent);
   display: block;
-  margin: 0 auto 24px auto;
+  margin: 0 auto 20px auto;
   width: fit-content;
-  padding: 8px 22px;
+  padding: 8px 20px;
   box-shadow: none;
-  font-weight: 500;
 }
 
 .back-btn:hover {
-  background: rgba(124, 58, 237, 0.1);
+  background: rgba(56, 189, 248, 0.1);
   box-shadow: none;
 }
 
@@ -223,16 +235,5 @@ button:active {
 }
 
 .scoreboard h2 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  background: linear-gradient(100deg, #818cf8 0%, #ec4899 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  margin-bottom: 8px;
-}
-
-.scoreboard p {
-  color: var(--text-muted);
-  font-size: 1.05rem;
+  color: var(--accent);
 }

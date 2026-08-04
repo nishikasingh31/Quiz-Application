@@ -1,12 +1,27 @@
 /* --- Global Styles --- */
+:root {
+  --bg-primary: #0a0a0f;
+  --bg-card: #16161f;
+  --border-subtle: #26262f;
+  --accent-blue: #2563eb;
+  --accent-purple: #7c3aed;
+  --accent-glow: rgba(124, 58, 237, 0.35);
+  --text-primary: #ffffff;
+  --text-muted: #9ca0ae;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background-color: #0f0f0f; /* Matched to your screenshot */
+  background: radial-gradient(circle at 20% 0%, #1a1a2e 0%, #0a0a0f 55%);
   font-family: 'Inter', -apple-system, sans-serif;
-  color: #ffffff;
+  color: var(--text-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 40px 20px;
   margin: 0;
   min-height: 100vh;
 }
@@ -14,8 +29,9 @@ body {
 h1 {
   font-size: 3rem;
   font-weight: 800;
-  margin-bottom: 40px;
-  background: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+  background: linear-gradient(100deg, #818cf8 0%, #a855f7 50%, #ec4899 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -26,32 +42,49 @@ h1 {
 .quiz-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  @media (min-width: 768px) {
-  grid-template-columns: repeat(3, 1fr);}
-  gap: 30px;
+  gap: 24px;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
 }
 
+@media (min-width: 768px) {
+  .quiz-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 .quiz-card {
-  background: #1e1e26;
-  border: 1px solid #33333f;
-  border-radius: 20px;
-  padding: 30px;
-  height: 130px;
+  position: relative;
+  background: linear-gradient(160deg, var(--bg-card) 0%, #1a1a24 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 18px;
+  padding: 28px;
+  height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
+  overflow: hidden;
+}
+
+.quiz-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--accent-glow), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
 }
 
 .quiz-card h3 {
   margin: 0;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
+  font-weight: 600;
   line-height: 1.4;
-  /* Truncate text after 2 lines */
+  letter-spacing: -0.01em;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   line-clamp: 2;
@@ -60,19 +93,20 @@ h1 {
 }
 
 .quiz-card:hover {
-  transform: translateY(-8px);
-  border-color: #7c3aed;
-  box-shadow: 0 15px 40px rgba(124, 58, 237, 0.2);
+  transform: translateY(-6px);
+  border-color: var(--accent-purple);
+  box-shadow: 0 20px 45px rgba(124, 58, 237, 0.25);
+}
+
+.quiz-card:hover::before {
+  opacity: 1;
 }
 
 /* --- Quiz Interface --- */
 .quiz-page {
   width: 100%;
   max-width: 800px;
- 
 }
-
-/* Update these specific classes in your CSS file */
 
 .question-card {
   display: flex;
@@ -83,78 +117,122 @@ h1 {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
-  /* Ensure the card has a minimum height so it doesn't shrink */
-  min-height: 500px; 
+  background: rgba(22, 22, 31, 0.6);
+  border: 1px solid var(--border-subtle);
+  border-radius: 24px;
+  padding: 48px 32px;
+  min-height: 500px;
+  backdrop-filter: blur(12px);
 }
 
 .question-text {
   font-size: 1.6rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
   margin-bottom: 10px;
-  /* FIXED HEIGHT: This prevents the buttons from moving up and down 
-     based on the length of the question text */
-  height: 50px; 
+  height: 50px;
   display: flex;
   align-items: center;
-
+  justify-content: center;
 }
 
 .options {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 14px;
   width: 100%;
   max-width: 500px;
-  /* Ensures the options stay in the same starting position */
-  margin-top: 20px; 
+  margin-top: 24px;
 }
 
 .option-btn {
-  /* Ensure buttons always have the same height */
-  height: 60px; 
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
-  /* ... keep your existing gradient/border styles ... */
+  background: linear-gradient(90deg, #1e1e2a 0%, #23232f 100%);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.option-btn:hover {
+  border-color: var(--accent-purple);
+  background: linear-gradient(90deg, #23233a 0%, #2a1f3d 100%);
+  transform: translateY(-2px);
+}
+
+.option-btn.correct {
+  border-color: #22c55e;
+  background: linear-gradient(90deg, #14301f 0%, #163823 100%);
+}
+
+.option-btn.incorrect {
+  border-color: #ef4444;
+  background: linear-gradient(90deg, #331414 0%, #3a1616 100%);
 }
 
 /* Global Button - Used for Options */
 button {
   width: 100%;
   max-width: 500px;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   color: #ffffff;
-  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 100%);
+  background: linear-gradient(90deg, var(--accent-blue) 0%, var(--accent-purple) 100%);
   border: none;
   border-radius: 12px;
   padding: 16px;
   margin: 8px 0;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 }
 
 button:hover {
   transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 10px 28px rgba(124, 58, 237, 0.35);
 }
 
+button:active {
+  transform: translateY(0);
+}
 
 /* Specific styling for the Back Button to override global button */
 .back-btn {
   background: transparent;
-  border: 1px solid #7c3aed;
-  color: #7c3aed;
-  display: block;       /* Ensures it behaves like a block for margins */
-  margin-left: auto;    /* Pushes from left */
-  margin-right: auto;
-  
+  border: 1px solid var(--accent-purple);
+  color: var(--accent-purple);
+  display: block;
+  margin: 0 auto 24px auto;
   width: fit-content;
+  padding: 8px 22px;
+  box-shadow: none;
+  font-weight: 500;
+}
 
-  padding: 8px 20px;
-  margin-bottom: 20px;
+.back-btn:hover {
+  background: rgba(124, 58, 237, 0.1);
   box-shadow: none;
 }
 
 .scoreboard {
   text-align: center;
+}
+
+.scoreboard h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: linear-gradient(100deg, #818cf8 0%, #ec4899 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+
+.scoreboard p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
 }

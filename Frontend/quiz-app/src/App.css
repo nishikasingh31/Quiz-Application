@@ -30,13 +30,10 @@ body {
   padding: 20px;
   margin: 0;
   min-height: 100vh;
-  background-image:
-    linear-gradient(30deg, var(--color-card-bg) 12%, transparent 12.5%, transparent 87%, var(--color-card-bg) 87.5%, var(--color-card-bg)),
-    linear-gradient(150deg, var(--color-card-bg) 12%, transparent 12.5%, transparent 87%, var(--color-card-bg) 87.5%, var(--color-card-bg)),
-    linear-gradient(30deg, var(--color-card-bg) 12%, transparent 12.5%, transparent 87%, var(--color-card-bg) 87.5%, var(--color-card-bg)),
-    linear-gradient(150deg, var(--color-card-bg) 12%, transparent 12.5%, transparent 87%, var(--color-card-bg) 87.5%, var(--color-card-bg));
-  background-size: 40px 70px;
-  background-position: 0 0, 0 0, 20px 35px, 20px 35px;
+   background-image:
+    linear-gradient(var(--color-card-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-card-border) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 h1 {
   font-size: 3rem;

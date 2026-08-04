@@ -35,7 +35,6 @@ body {
     radial-gradient(circle at 85% 80%, var(--color-heading-gradient-end) 0%, transparent 35%);
   background-attachment: fixed;
   opacity: 1;
-  );
 }
 h1 {
   font-size: 3rem;

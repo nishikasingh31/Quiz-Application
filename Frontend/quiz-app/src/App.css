@@ -1,22 +1,22 @@
 /* --- Color Variables --- */
 :root {
-  --color-bg: #fdf2f8;
-  --color-text: #3b0764;
-  --color-heading-gradient-start: #ec4899;
-  --color-heading-gradient-end: #8b5cf6;
+  --color-bg: #000000;
+  --color-text: #f5f5f5;
+  --color-heading-gradient-start: #f5ff00;
+  --color-heading-gradient-end: #ff006e;
 
-  --color-card-bg: #ffffff;
-  --color-card-border: #f0d9ec;
-  --color-card-border-hover: #ec4899;
-  --color-card-shadow-hover: rgba(236, 72, 153, 0.2);
+  --color-card-bg: #0f0f0f;
+  --color-card-border: #2a2a2a;
+  --color-card-border-hover: #f5ff00;
+  --color-card-shadow-hover: rgba(255, 0, 110, 0.3);
 
-  --color-btn-gradient-start: #ec4899;
-  --color-btn-gradient-end: #8b5cf6;
-  --color-btn-text: #ffffff;
-  --color-btn-shadow: rgba(139, 92, 246, 0.25);
+  --color-btn-gradient-start: #ff006e;
+  --color-btn-gradient-end: #f5ff00;
+  --color-btn-text: #000000;
+  --color-btn-shadow: rgba(0, 0, 0, 0.5);
 
-  --color-back-btn-border: #ec4899;
-  --color-back-btn-text: #ec4899;
+  --color-back-btn-border: #f5ff00;
+  --color-back-btn-text: #f5ff00;
 }
 
 /* --- Global Styles --- */
